@@ -1,8 +1,7 @@
 {
   "Threads": [
-    { "PacketsDirectory": "/data/stenographer/packets"
-    , "IndexDirectory": "/data/stenographer/index"
-    , "DiskFreePercentage": 20
+    { "PacketsDirectory": "/path/to/thread0/packets/directory"
+    , "IndexDirectory": "/path/to/thread0/index/directory"
     }
   ]
   , "StenotypePath": "/usr/bin/stenotype"
