@@ -5,6 +5,6 @@ This is a little hack and primitive web interface for [Google Stenographer](http
 ![screenshot](./screenshot.png)
 
 ## Install
-In order for this to work you'll need to open Stenographer to the outside. On the server you're running Stenographer on, modify `/etc/stenographer/config` to use `"Host": "0.0.0.0"` and then restart stenographer.
+In order for this to work you'll need to open Stenographer to the outside. On the server you're running Stenographer on, modify `/etc/stenographer/config` to use `"Host": "0.0.0.0"` and then restart stenographer. Also, be sure to configure your firewall to allow port 1234.
 
 Run `./install.sh` on a RHEL/CentOS 7 system that can communicate with your Stenographer server. The script will prompt to scp the `client_cert.pem` and `client_key.pem` that will be necessary to use Stenoremote, although this can be done manually if desired.
