@@ -19,8 +19,8 @@ read -r -p "Grab client_cert.pem & client_key.pem from root@$HNAME? [y/N] " resp
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
   scp root@$HNAME:"/etc/stenographer/certs/client_cert.pem /etc/stenographer/certs/client_key.pem" /etc/stenographer/certs/
-  chmod 644 /etc/stenographer/client_cert.pem
-  chmod 644 /etc/stenographer/client_key.pem
+  chmod 644 /etc/stenographer/certs/client_cert.pem
+  chmod 644 /etc/stenographer/certs/client_key.pem
 else
   echo "Ok, remember to put in the certs manually then!"
 fi
