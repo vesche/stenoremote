@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<title>stenoremote</title>
+</head>
+<body>
+<pre>
+       __                                                          __
+      /\ \__                                                      /\ \__
+  ____\ \ ,_\    __    ___     ___   _ __    __    ___ ___     ___\ \ ,_\    __
+ /',__\\ \ \/  /'__`\/' _ `\  / __`\/\`'__\/'__`\/' __` __`\  / __`\ \ \/  /'__`\
+/\__, `\\ \ \_/\  __//\ \/\ \/\ \L\ \ \ \//\  __//\ \/\ \/\ \/\ \L\ \ \ \_/\  __/
+\/\____/ \ \__\ \____\ \_\ \_\ \____/\ \_\\ \____\ \_\ \_\ \_\ \____/\ \__\ \____\
+ \/___/   \/__/\/____/\/_/\/_/\/___/  \/_/ \/____/\/_/\/_/\/_/\/___/  \/__/\/____/
+
+     ,.-~*´¨¯¨`*·~-.¸- https://github.com/vesche/stenoremote -,.-~*´¨¯¨`*·~-.¸
+
+Examples:
+host 8.8.8.8          		# Single IP address (hostnames not allowed)
+net 10.0.0.0/8        		# Network with CIDR
+port 23               		# Port number (UDP or TCP)
+icmp                 		# Specific protocol
+before 2012-11-03T11:05:00Z	# Packets before a specific time (UTC)
+after 2012-11-03T11:05:00-0700	# Packets after a specific time (with TZ)
+before 45m ago			# Packets before a relative time
+before 3h ago         		# Packets after a relative time
+<pre>
+
+<form action='cgi-bin/grab.py' method='POST'>
+Steno Query: <input type='text' name='query' size=25 />
+Output Name: <input type='text' name='fname' size=25 />
+<input type='submit' name='submit' value='Grab!' />
+</form>
+
+</body>
+</html>
