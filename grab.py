@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 print "Content-type: text/html\n\n"
-print "Grabbing pcap..."
+print "Grabbing your packets... Wait for this page to finish loading!"
+print "When your packets finish downloading they'll be <a href="./pcap/">here</a>."
 
-import cgi, os
+import cgi, subprocess
 
 form = cgi.FieldStorage()
-query = form.getvalue('query')
-fname = form.getvalue('fname')
+query = str(form.getvalue('query'))
+fname = str(form.getvalue('fname'))
 
-os.system("stenoread '{}' -w /tmp/stenoremote/{}".format(query, fname))
+subprocess.Popen(["/usr/bin/stenoread", query, "-w", '/var/www/html/pcap/'+fname])
