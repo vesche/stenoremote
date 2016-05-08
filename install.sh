@@ -32,14 +32,15 @@ yes | cp -rf ./index.html /var/www/html/
 yes | cp -rf ./grab.py /var/www/cgi-bin/
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --reload
-mkdir /tmp/stenoremote
-chmod 777 /tmp/stenoremote
+mkdir /var/www/html/pcap
+chmod 777 /var/www/html/pcap
 
 # disable selinux
 read -r -p "This app requires disabling SELINUX and rebooting, continue? [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
   sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+  sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
   reboot
 else
   echo "install.sh terminated, stenoremote not installed."
