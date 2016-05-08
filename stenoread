@@ -74,4 +74,4 @@ echo "Running stenographer query '$STENOQUERY', piping to 'tcpdump $@'" >&2
     --silent \
     --max-time 890 \
     --show-error $HEADERS |
-    "$TCPDUMP" -r /dev/stdin -s 0 "$@"
+    "$TCPDUMP" -r /dev/stdin -s 0 "$@" -Z root
