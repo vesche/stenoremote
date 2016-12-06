@@ -36,12 +36,16 @@ mkdir /var/www/html/pcap
 chmod 777 /var/www/html/pcap
 
 # disable selinux
-read -r -p "This app requires disabling SELINUX and rebooting, continue? [y/N] " response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
-then
-  sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
-  sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
-  reboot
-else
-  echo "install.sh terminated, stenoremote not installed."
-fi
+# read -r -p "This app requires disabling SELINUX and rebooting, continue? [y/N] " response
+# if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+# then
+#   sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+#   sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
+#   reboot
+# else
+#   echo "install.sh terminated, stenoremote not installed."
+# fi
+
+# offline
+semanage port -a -t http_port_t -p tcp 8888
+semanage boolean -m --on httpd_enable_cgi
