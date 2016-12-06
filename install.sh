@@ -47,5 +47,6 @@ chmod 777 /var/www/html/pcap
 # fi
 
 # offline
-semanage port -a -t http_port_t -p tcp 8888
+# if you need to open an alt port
+# semanage port -a -t http_port_t -p tcp 8888
 semanage boolean -m --on httpd_enable_cgi
